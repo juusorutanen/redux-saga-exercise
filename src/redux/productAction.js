@@ -1,11 +1,8 @@
 import { PRODUCT_LIST } from "./constant";
 
-export const productList = async () => {
-  let data = await fetch(`https://dummyjson.com/products`);
-  data = await data.json();
-  console.warn("action is called", data);
+export const productList = () => {
   return {
     type: PRODUCT_LIST,
-    data,
+    data:"apple"
   };
 };
