@@ -1,6 +1,6 @@
 
 import '../App.css';
-import { addToCart } from '../redux/action';
+import { addToCart,emptyFromCart,removeFromCart } from '../redux/action';
 import { useDispatch } from 'react-redux';
 
 function Main() {
@@ -15,7 +15,9 @@ function Main() {
 
   return (
     <div>
-      <button onClick={() => dispatch(addToCart(product))}>Add to Cart</button>
+      <button onClick={() => dispatch(addToCart(product))}>Add to cart</button>
+      <button onClick={() => dispatch(removeFromCart(product.name))}>Remove from cart</button>
+      <button onClick={() => dispatch(emptyFromCart(product))}>Empty cart</button>
     </div>
   );
 }
