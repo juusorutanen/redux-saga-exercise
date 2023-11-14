@@ -16,16 +16,17 @@ function Main() {
 
   return (
     <div>
-      <button onClick={() => dispatch(emptyFromCart())}>Empty cart</button>
       <div className="product-container">
         {data.map((item, index) => (
           <div key={index} className="product-item">
-            <img src={item.images[0]} alt={item.title} />
-            <h1>Title: {item.title}</h1>
-            <p>Title: {item.description}</p>
-            <div>Title: {item.rating}</div>
-            <div>Title: {item.price}</div>
-            <div>
+            <div className="product-image-container">
+              <img src={item.thumbnail} alt={item.title} />
+            </div>
+            <h1>{item.brand} {item.title}</h1>
+            <div>{item.rating}</div>
+            <p>{item.description}</p>
+            <div>{item.price} €</div>
+            <div className="product-buttons">
               <button onClick={() => dispatch(addToCart(item))}>
                 Add to cart
               </button>
