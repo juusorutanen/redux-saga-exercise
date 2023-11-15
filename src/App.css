@@ -89,3 +89,41 @@ h1 {
   color: #FFFFFF;
   border: 0;
 }
+
+/* cart styles */
+
+.cart-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:2rem;
+}
+
+.cart-header {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.cart-page-container {
+  display: flex;
+}
+
+.cart-info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item {
+  display: flex;
+  gap:1rem;
+}
+
+.cart-item > img {
+  width: 30%;
+}
+
+.cart-details {
+  display: flex;
+  flex-direction: column;
+}
+
