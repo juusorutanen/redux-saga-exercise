@@ -1,7 +1,7 @@
 import "../App.css";
 import { addToCart, emptyFromCart, removeFromCart } from "../redux/action";
 import { useDispatch } from "react-redux";
-import { productList } from "../redux/productAction";
+import { productList, productSearch } from "../redux/productAction";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 
@@ -15,7 +15,10 @@ function Main() {
   }, []);
 
   return (
-    <div>
+    <div className="product-page">
+      <div className="search-box">
+          <input type="text" onChange={(event)=> dispatch(productSearch(event.target.value))}placeholder="Search for products"/>
+        </div>
       <div className="product-container">
         {data.map((item, index) => (
           <div key={index} className="product-item">
