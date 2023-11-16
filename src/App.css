@@ -1,6 +1,7 @@
 .app {
-  padding-bottom: 600px;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 h1 {
@@ -42,7 +43,6 @@ h1 {
   justify-content: center;
   gap:2rem;
   flex-wrap: wrap;
-  height: 500px;
   padding: 50px;
   margin-bottom: 200px;
 }
@@ -152,3 +152,15 @@ h1 {
   justify-content: space-between;
 }
 
+/* Footer */
+.footer {
+  display: flex;
+  background-color: rgb(18, 15, 49);
+  color: white;
+  font-weight: 300;
+  justify-content: center;
+  margin-top: auto;
+  align-items: center;
+  height: 200px;
+  width: 100%; 
+}
