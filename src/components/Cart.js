@@ -16,22 +16,23 @@ const Cart = () => {
     const calculatedTax = calculatedAmount * taxRate;
     setTax(calculatedTax);
 
-    // Calculate total (amount already includes tax)
     const calculatedTotal = calculatedAmount;
     setTotal(calculatedTotal);
   }, [cartData]);
   return (
     <div className="cart-page">
-      <Link to="/">Go to Products Link</Link>
+      <Link to="/">Go back to products</Link>
       <div className="cart-header">My Cart</div>
       <div className="cart-page-container">
+        {cartData.length > 0 ? (
+          <>
         <div className="cart-info-container">
             {cartData.map((item, index) => 
                 <div className="cart-item" key={index}>
                     <img src={item.thumbnail} alt={item.title}/>
                     <div className="cart-details">
                         <h1>{item.brand} {item.title}</h1>
-                        <p>{item.price}</p>
+                        <p>{item.price} €</p>
                     </div>
                 </div>
             )}
@@ -42,7 +43,11 @@ const Cart = () => {
             <div className="cart-price"><span>Alv: </span><span>{tax} €</span></div>
             <div className="cart-price"><span>Total: </span><span>{total} €</span></div>
         </div>
-      </div>
+      </>
+        ) : (
+        <p>Your cart is empty</p>
+        )}
+        </div>
     </div>
   );
 };
